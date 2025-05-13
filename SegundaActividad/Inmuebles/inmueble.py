@@ -1,10 +1,17 @@
 class Inmueble:
-    def __init__(self, direccion, metros_cuadrados, precio):
-        self.direccion = direccion
-        self.metros_cuadrados = metros_cuadrados
-        self.precio = precio
+    #constructor
+    def __init__(self,id_inmobiliario:int,direccion:str,area:int):
+        self._direccion = direccion
+        self._id_inmobiliario = id_inmobiliario
+        self._area = area
+        self._precioVenta:float
+
+    def calcularPrecioVenta(self, valorArea:float):
+        self._precioVenta = self._area * valorArea
+        return self._precioVenta
 
     def imprimir(self):
-        print(f"Dirección: {self.direccion}")
-        print(f"Metros cuadrados: {self.metros_cuadrados}")
-        print(f"Precio: {self.precio}")
+        print(f"Dirección: {self._direccion}")
+        print(f"Metros cuadrados: {self._area}")
+        print(f"Identificación Inmobiliaria: {self._id_inmobiliario}")
+        print(f"Precio de venta: {self._precioVenta}")

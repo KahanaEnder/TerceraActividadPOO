@@ -1,11 +1,11 @@
 from .inmueble import Inmueble
-from .vivienda import Vivienda
+from .vivienda import InmuebleVivienda
 from .casa import Casa, CasaRural, CasaUrbana
 from .apartamento import Apartamento, Apartaestudio, ApartamentoFamiliar
 from .local import Local, LocalComercial, Oficina
 
 __all__ = [
-    "Inmueble", "Vivienda",
+    "Inmueble", "InmuebleVivienda",
     "Casa", "CasaRural", "CasaUrbana",
     "Apartamento", "Apartaestudio", "ApartamentoFamiliar",
     "Local", "LocalComercial", "Oficina"
