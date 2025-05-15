@@ -1,24 +1,36 @@
+from enum import Enum
 from .inmueble import Inmueble
 
 class Local(Inmueble):
-    def __init__(self, id_inmobiliario, area, direccion, localizacion):
-        super().__init__(id_inmobiliario, area, direccion)
-        self._localizacion = localizacion
+    class Tipo(Enum):
+        INTERNO = "INTERNO"
+        CALLE = "CALLE"
+    def __init__(self, id_inmobiliario, direccion, area,tipoLocal:Tipo):
+        super().__init__(id_inmobiliario, direccion, area)
+        self._tipoLocal = tipoLocal
+    
+    def imprimir(self):
+        print(f"Tipo de local: {self._tipoLocal}")
+        return super().imprimir()
 
 
 class LocalComercial(Local):
-    def __init__(self, id_inmobiliario, area, direccion, localizacion, centro_comercial):
-        super().__init__(id_inmobiliario, area, direccion, localizacion)
-        self._centro_comercial = centro_comercial
+    _valorArea:float = 3000000
+    def __init__(self, id_inmobiliario, direccion, area, tipoLocal,centroComercial):
+        super().__init__(id_inmobiliario, direccion, area, tipoLocal)
+        self._centroComercial = centroComercial
 
-    def calcular_valor_compra(self):
-        return self._area * 3000000
+    def imprimir(self):
+        print(f"Centro comercial: {self._centroComercial}")
+        return super().imprimir()
 
 
 class Oficina(Local):
-    def __init__(self, id_inmobiliario, area, direccion, localizacion, es_gobierno):
-        super().__init__(id_inmobiliario, area, direccion, localizacion)
-        self._es_gobierno = es_gobierno
+    _valorArea:float = 3500000
+    def __init__(self, id_inmobiliario, direccion, area, tipoLocal,esGobierno:bool):
+        super().__init__(id_inmobiliario, direccion, area, tipoLocal)
+        self._esGobierno = esGobierno
 
-    def calcular_valor_compra(self):
-        return self._area * 3500000
+    def imprimir(self):
+        print(f"Es oficina gubernamental: {self._esGobierno}")
+        return super().imprimir()

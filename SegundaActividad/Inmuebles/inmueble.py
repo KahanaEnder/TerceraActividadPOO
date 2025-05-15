@@ -1,14 +1,14 @@
 class Inmueble:
     #constructor
     def __init__(self,id_inmobiliario:int,direccion:str,area:int):
-        self._direccion = direccion
         self._id_inmobiliario = id_inmobiliario
+        self._direccion = direccion
         self._area = area
         self._precioVenta:float
 
     def calcularPrecioVenta(self, valorArea:float):
         self._precioVenta = self._area * valorArea
-        return self._precioVenta
+        print(self._precioVenta)
 
     def imprimir(self):
         print(f"Dirección: {self._direccion}")
