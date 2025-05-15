@@ -1,4 +1,4 @@
-from .vivienda import InmuebleVivienda
+from Inmuebles import InmuebleVivienda
 
 class Casa(InmuebleVivienda):
     def __init__(self, id_inmobiliario, direccion, area, num_habitaciones, num_banos, pisos:int):

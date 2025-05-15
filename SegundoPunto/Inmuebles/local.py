@@ -1,5 +1,5 @@
 from enum import Enum
-from .inmueble import Inmueble
+from Inmuebles import Inmueble
 
 class Local(Inmueble):
     class Tipo(Enum):
